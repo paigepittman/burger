@@ -1,0 +1,29 @@
+body {
+  background-image: url("http://www.themesltd.com/headers2/baby_burgers.png");
+  background-repeat: repeat;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+h2 {
+  font-weight: bold;
+  color: #ff9333;
+}
+.jumbotron {
+  background-color: rgba(255, 255, 255, .7);
+  width: 1000px;
+  margin: auto;
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: #ff9333;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, .7);
+  width: 1000px;
+  margin: auto;
+}
+
+.foot {
+  height: 100px;
+}

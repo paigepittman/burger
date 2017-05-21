@@ -32,19 +32,22 @@ var orm = {
       callback(result);
     });
   },
-  insertOne: function(table, col, val, callback){
+  insertOne: function(table, cols, vals, callback) {
     var queryString = "INSERT INTO " + table;
     queryString += " (";
-    queryString += col.toString();
-    queryString += "VALUES (";
-    queryString += sqlhelper(val.length);
+    queryString += cols.toString();
     queryString += ") ";
+    queryString += "VALUES (";
+    queryString += sqlhelper(vals.length);
+    queryString += ") ";
+    console.log(queryString);
+    console.log(vals);
 
-    connection.query(queryString, val, function(err, result) {
+    connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }
-      callback(result)
+      callback(result);
     });
   },
   updateOne: function(table, objColVals, condition, callback) {
@@ -55,7 +58,7 @@ var orm = {
     queryString += condition;
 
     connection.query(queryString, function(err, result) {
-      if err {
+      if (err) {
         throw err;
       }
       callback(result);

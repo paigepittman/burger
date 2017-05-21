@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 var exphbs = require("express-handlebars");
-
-var routes = require("./controllers/catsController.js");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 

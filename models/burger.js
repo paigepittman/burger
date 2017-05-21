@@ -7,9 +7,10 @@ var burger = {
       callback(res);
     });
   },
-  create: function(col, val, callback) {
-    orm.insertOne("burgers", function(res) {
+  create: function(cols, vals, callback) {
+    orm.insertOne("burgers", cols, vals, function(res) {
       callback(res);
+      console.log(res);
     });
   },
   update: function(objColVals, condition, callback) {
